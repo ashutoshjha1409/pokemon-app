@@ -7,8 +7,23 @@
     background-color: #616161;
     align-items: center;
     margin: 0 0 20px 20px;
+    @media screen and (min-width: 360px) and (max-width: 900px) {
+        margin: 0 0 20px 0;
+        width: 150px;
+    }
     .card-body {
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.623);
+        @media screen and (min-width: 360px) and (max-width: 900px) {
+            text-align: center;
+        }
+        .pokemon-image{
+            width: 200px;
+            height: 200px;
+            @media screen and (min-width: 360px) and (max-width: 900px) {
+                width: 100px;
+                height: 100px;
+            }
+        }
         .pokemon-data {
             background-color: #232323;
             color: #fff;

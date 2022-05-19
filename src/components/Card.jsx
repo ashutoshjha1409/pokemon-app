@@ -25,7 +25,12 @@ const Card = (props) => {
     <>
       <div className='card-container'>
         <div className='card-body'>
-          <img src={pokemonData?.sprites?.other['official-artwork']['front_default']} width="200" height="300" alt={pokemonData.name} data-testid="pokemon-image" />
+          <img 
+            src={pokemonData?.sprites?.other['official-artwork']['front_default']} 
+            alt={pokemonData.name} 
+            data-testid="pokemon-image" 
+            className='pokemon-image'
+          />
           <div className="pokemon-data">
             <div className="pokemon-name" data-testid="pokemon-name" >{capitalizeFirstLetter(pokemonData?.name || '')}</div>
             <span className='pokemon-specifics' data-testid="pokemon-specifics" >{`Height: ${pokemonData?.height} | Weight: ${pokemonData?.weight}`}</span>
