@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {capitalizeFirstLetter} from "../utils/Helper"
+import './Card.scss';
 
 const Card = (props) => {
   const [pokemonData, setPokemonData] = useState({});
