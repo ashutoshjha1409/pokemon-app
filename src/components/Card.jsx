@@ -11,15 +11,15 @@ const Card = (props) => {
 
   const fetchPokemonDetail = async () => {
     const response = await fetch(props.url);
+    
     if (response.status !== 200) {
       alert("We encountered some issue with last request.");
     } 
+
     const res = await response.json();
     const abilities = res?.abilities.map((el) => el.ability?.name)
-
     setPokemonData({...res, abilitiesStr: abilities.join(', ')});
   }
-
 
   return (
     <>

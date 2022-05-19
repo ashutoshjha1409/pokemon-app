@@ -17,49 +17,35 @@ h2{
     align-items: center;
     margin-bottom: 50px;    
 }
-
 .pagination-buttons{
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;    
     button {
-        display: flex;
         height: 3em;
         width: 100px;
-        align-items: center;
-        justify-content: center;
         border-radius: 3px;
         letter-spacing: 1px;
         transition: all 0.2s linear;
         cursor: pointer;
-        border: none;
-        background: #333;
+        border: 1px solid #dfdfdf;
+        background-color: #333;
         color: #fff;
         margin-right: 10px;
     }
-   
-   button > svg {
-    margin-right: 5px;
-    margin-left: 5px;
-    font-size: 20px;
-    transition: all 0.4s ease-in;
-   }
-   
-   button:hover > svg {
-    font-size: 1.2em;
-    transform: translateX(-5px);
-   }
    
    button:hover {
     box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
     transform: translateY(-2px);
    }
-//    button:disabled {
-//     background: red;
-//    }
+   button:disabled {
+    background-color: #dfdfdf;
+    color: #333;
+    cursor: not-allowed;
+   }
    &.bottom-buttons{
        margin-top: 50px;
        margin-bottom: 50px;
+       justify-content: flex-end;
    }
 }

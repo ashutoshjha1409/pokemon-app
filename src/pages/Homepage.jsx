@@ -6,6 +6,10 @@ import './Homepage.scss'
 
 const Homepage = () => {
   const [pokemonData, setPokemonData] = useState({});
+  const [isButtonDisabled, setButtonDisabled] = useState({
+    prev: false,
+    next: false
+  })
 
   useEffect(() =>{
     fetchPokemonList(pageDetails.defaultUrl);
@@ -16,10 +20,20 @@ const Homepage = () => {
       return false;
 
     const response = await fetch(url);
+
     if (response.status !== 200) {
       alert("We encountered some issue with last request.");
     } 
+
     const res = await response.json();
+    const isButtonDisabled = {
+      prev: false,
+      next: false
+    }
+    if(res.previous === null) isButtonDisabled.prev = true;
+    if(res.next === null) isButtonDisabled.next = true;
+    console.log(isButtonDisabled, res)
+    setButtonDisabled(isButtonDisabled);
     setPokemonData(res);
   }
 
@@ -31,11 +45,18 @@ const Homepage = () => {
         <div className='action-items max-width' >
           <Select options={availableLimits} />
           <div className='pagination-buttons' data-testid="pagination-buttons-top">          
-            <button onClick={() => fetchPokemonList(pokemonData.previous)}>            
-              <span>Prev</span>
+            <button 
+              onClick={() => fetchPokemonList(pokemonData.previous)}  
+              disabled={isButtonDisabled.prev}
+            >            
+              Prev
+            </button>            
+            <button 
+              onClick={() => fetchPokemonList(pokemonData.next)}  
+              disabled={isButtonDisabled.next}
+            >
+              Next
             </button>
-            
-            <button onClick={() => fetchPokemonList(pokemonData.next)}>Next</button>
           </div>
         </div>
         <div className='card-list max-width' data-testid="card-list-container">
@@ -46,13 +67,17 @@ const Homepage = () => {
           }
         </div>
         <div className='pagination-buttons max-width bottom-buttons' data-testid="pagination-buttons-bottom">
-          <button onClick={() => fetchPokemonList(pokemonData.previous)} disabled={pokemonData.previous === null}>
-            
-            <span>Prev</span>
+          <button 
+            onClick={() => fetchPokemonList(pokemonData.previous)} 
+            disabled={isButtonDisabled.prev}
+          >            
+            Prev
           </button>
-          <button onClick={() => fetchPokemonList(pokemonData.next)} disabled={pokemonData.next === null}>
-            
-            <span>Next</span>
+          <button 
+            onClick={() => fetchPokemonList(pokemonData.next)} 
+            disabled={isButtonDisabled.next}
+          >            
+            Next
           </button>
         </div>
       </>
