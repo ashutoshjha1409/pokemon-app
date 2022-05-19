@@ -3,30 +3,40 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    max-width: 1280px;
-    margin: 0 auto;
 }
 h2{
     text-align: center;
 }
+.max-width{
+    max-width: 1280px;
+    margin: 0 auto;
+}
 .action-items {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 50px;    
+}
+
+.pagination-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     button {
         display: flex;
         height: 3em;
         width: 100px;
         align-items: center;
         justify-content: center;
-        background-color: #eeeeee4b;
         border-radius: 3px;
         letter-spacing: 1px;
         transition: all 0.2s linear;
         cursor: pointer;
         border: none;
-        background: #fff;
+        background: #333;
+        color: #fff;
+        margin-right: 10px;
     }
    
    button > svg {
@@ -44,5 +54,12 @@ h2{
    button:hover {
     box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
     transform: translateY(-2px);
+   }
+//    button:disabled {
+//     background: red;
+//    }
+   &.bottom-buttons{
+       margin-top: 50px;
+       margin-bottom: 50px;
    }
 }

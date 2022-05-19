@@ -25,12 +25,12 @@ const Card = (props) => {
     <>
       <div className='card-container'>
         <div className='card-body'>
-          <img src={pokemonData?.sprites?.other['official-artwork']['front_default']} width="200" height="300" alt={pokemonData.name}/>
+          <img src={pokemonData?.sprites?.other['official-artwork']['front_default']} width="200" height="300" alt={pokemonData.name} data-testid="pokemon-image" />
           <div className="pokemon-data">
-            <div className="pokemon-name">{capitalizeFirstLetter(pokemonData?.name || '')}</div>
-            <span className='pokemon-specifics'>{`Height: ${pokemonData?.height} | Weight: ${pokemonData?.weight}`}</span>
+            <div className="pokemon-name" data-testid="pokemon-name" >{capitalizeFirstLetter(pokemonData?.name || '')}</div>
+            <span className='pokemon-specifics' data-testid="pokemon-specifics" >{`Height: ${pokemonData?.height} | Weight: ${pokemonData?.weight}`}</span>
             <br />
-            <span className='pokemon-specifics'>Abilities: {pokemonData?.abilitiesStr}</span>
+            <span className='pokemon-specifics' data-testid="pokemon-abilities" >Abilities: {pokemonData?.abilitiesStr}</span>
           </div>
           
         </div>
