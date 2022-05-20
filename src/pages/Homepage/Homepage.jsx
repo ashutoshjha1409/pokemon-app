@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Select from 'react-select'
-import {pageDetails, availableLimits} from '../utils/Helper';
-import Card from "../components/Card";
+import {pageDetails, availableLimits} from '../../utils/Helper';
+import Card from "../../components/Card/Card";
 import './Homepage.scss'
 
 const Homepage = () => {

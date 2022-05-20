@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {capitalizeFirstLetter} from "../utils/Helper"
+import {capitalizeFirstLetter} from "../../utils/Helper"
 import './Card.scss';
 
 const Card = (props) => {
@@ -7,7 +7,7 @@ const Card = (props) => {
   
   useEffect(()=> {
     fetchPokemonDetail();
-  }, [])
+  })
 
   const fetchPokemonDetail = async () => {
     const response = await fetch(props.url);

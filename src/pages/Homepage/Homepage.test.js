@@ -9,5 +9,5 @@ test('renders Homepage components', () => {
     expect(screen.getByTestId("card-list-container")).toBeInTheDocument();
     expect(screen.getByTestId("pagination-buttons-top")).toBeInTheDocument();
     expect(screen.getByTestId("pagination-buttons-bottom")).toBeInTheDocument();
-  });
+});
   
